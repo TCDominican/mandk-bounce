@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>M & K Bounce</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+<div class="background-logo"></div>
+ 
+
+  <!-- HERO -->
+  <section class="hero">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a href="#rentals" class="hero-btn">View Our Bouncy Houses</a>
+  </section>
+
+  <section class="trust">
+
+  <div class="trust-card">
+    <span class="trust-text">✅ Clean & Inspected</span>
+    <img src="images/clean.jpeg" alt="Clean & Inspected" class="trust-image">
+  </div>
+
+  <div class="trust-card">
+    <span class="trust-text">🚚 Reliable Delivery</span>
+    <img src="images/delivery.jpeg" alt="Reliable Delivery" class="trust-image">
+  </div>
+
+  <div class="trust-card">
+    <span class="trust-text">❤️ Family Owned</span>
+    <img src="images/family.jpeg" alt="Family Owned" class="trust-image">
+  </div>
+
+</section>
+
+  <!-- INVENTORY -->
+  <section id="rentals" class="rentals">
+  <h2 class="bouncy-title">Our Bouncy Houses</h2>
+
+  <div class="rental-grid">
+
+    <!-- Bouncy House 1 -->
+    <div class="rental-card">
+      <img src=images/bouncy-1.png>
+
+      <h3>Castle Bounce</h3>
+
+      <ul class="rental-details">
+        <li><strong>Price:</strong> $150</li>
+        <li><strong>Drop‑off:</strong> 10:00 AM</li>
+        <li><strong>Pick‑up:</strong> 7:00 PM</li>
+        <li><strong>Overnight:</strong> Available (additional fee)</li>
+      </ul>
+
+      <button class="book-now-btn" data-item="Castle Bounce">
+        Book Now
+      </button>
+    </div>
+
+    <!-- Bouncy House 2 -->
+    <div class="rental-card">
+      <img src=images/bouncy-2.png>
+
+      <h3>Tropical Bounce</h3>
+
+      <ul class="rental-details">
+        <li><strong>Price:</strong> $150</li>
+        <li><strong>Drop‑off:</strong> 10:00 AM</li>
+        <li><strong>Pick‑up:</strong> 7:00 PM</li>
+        <li><strong>Overnight:</strong> Available (additional fee)</li>
+      </ul>
+
+      <button class="book-now-btn" data-item="Tropical Bounce">
+        Book Now
+      </button>
+    </div>
+
+  </div>
+</section>
+
+  <section class="coming-soon">
+  <h2 class="coming-title">Coming Soon</h2>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+
+      <div class="carousel-item">
+        <img src="images/coming1.png" alt="Coming Soon Item 1">
+        <p class="caption">Tables</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/coming2.png" alt="Coming Soon Item 2">
+        <p class="caption">Water Slides</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/coming3.png" alt="Coming Soon Item 3">
+        <p class="caption">Chairs</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/coming4.png" alt="Coming Soon Item 4">
+        <p class="caption">Photo Booths</p>
+      </div>
+
+      <div class="carousel-item">
+        <img src="images/coming5.png" alt="Coming Soon Item 5">
+        <p class="caption">Commercial Bouncy's</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2 class="about-title">About Us</h2>
+
+    <p>
+     M & K Bounce was created with one simple goal — to help families create unforgettable memories.
+    </p>
+
+    <p>
+     As a family‑owned business, we understand how important safety, cleanliness, and reliability are. 
+     That’s why we treat every event with care, making sure kids have a blast and parents have peace of mind from start to finish.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>M & K Bounce LLC</strong></p>
+    <p>Bristol County, MA</p>
+    <button class="footer-book-btn">
+  Book / Contact Us
+</button>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- BOOKING MODAL -->
+<div id="booking-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+
+    <h2 class="modal-title">Book Your Rental</h2>
+
+   
+<form
+  id="booking-form"
+  action="https://formspree.io/f/mgorvnpw"
+  method="POST"
+>
+
+  <input type="text" name="name" placeholder="Your Name" required>
+
+  <input type="tel" name="phone" placeholder="Phone Number (Required)" required>
+
+  <input type="email" name="email" placeholder="Email Address (Optional)">
+
+  <input type="text" name="selected_item" id="selected-item" readonly>
+
+  <textarea
+    name="message"
+    placeholder="Event date, location, and any details..."
+    rows="4"
+    required></textarea>
+
+  <div class="checkbox-group">
+    <label>
+      <input type="checkbox" name="sms_ok" required>
+      I agree to receive text message responses about my booking
+    </label>
+
+    <label>
+      <input type="checkbox" name="promo_ok">
+      I agree to receive occasional promotional text messages
+    </label>
+  </div>
+
+  <p style="font-size:11px; text-align:center;">
+    Message &amp; data rates may apply. Message frequency varies.
+  </p>
+
+  <button type="submit" class="submit-btn">
+    Send Request
+  </button>
+
+</form>
+
+
+
+<!-- ✅ SUCCESS MESSAGE IS NOW OUTSIDE THE FORM -->
+<div id="success-message" style="display: none; text-align: center;">
+  <h2 class="modal-title success-text">
+    Success!
+  </h2>
+  <p class="success-text">
+    A staff member will reach out to you soon!
+  </p>
+  <div class="site-disclaimer">
+  <h2>Important Information</h2>
+  <p>
+    Submitting a booking request does not guarantee availability.
+    Rentals are confirmed only after staff approval.
+    A non‑refundable deposit is required to reserve equipment.
+    Rentals may be cancelled or rescheduled due to unsafe weather conditions.
+    Adult supervision is required at all times.
+  </p>
+</div>
+
+</div>
+
+    
+  </div>
+</div>
+
+</body>
+</html>
