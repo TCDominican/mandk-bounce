@@ -1,0 +1,772 @@
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: rgba(237, 117, 117, 0.92);
+  color: #111; /* default black text */
+  overflow-x: hidden;
+}
+
+
+
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: rgba(237, 117, 117, 0.92);
+}
+
+.hero h1 {
+  font-family: 'Modak', cursive;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero h1,
+.bouncy-title {
+  text-shadow: 0 4px 0 #e63946;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #ff8c00;
+  color: #fcf7f7;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================
+   TRUST SECTION
+========================= */
+.trust {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 40px 20px;
+}
+
+.trust-card {
+  background: #f9f7f7;
+  padding: 20px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   RENTALS
+========================= */
+.rentals {
+  padding: 60px 20px;
+}
+
+.bouncy-title {
+  font-family: 'Modak', cursive;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  animation: bounce 1.8s ease-in-out infinite;
+}
+
+/* One single bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.rental-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.rental-card {
+  background: rgb(229, 239, 248);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.rental-card img {
+  width: 40%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about {
+  padding: 60px 20px;
+  background: rgba(243, 213, 213, 0.92);
+  text-align: center;
+}
+
+.about-title {
+  
+  font-family: 'Modak', cursive;
+  font-size: 32px;
+  color: #e63946;
+  animation: bounce 2.2s ease-in-out infinite;
+}
+
+.about p {
+  max-width: 720px;
+  margin: 16px auto;
+  line-height: 1.6;
+
+  /* ✅ Glass-style readability layer */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  padding: 18px 22px;
+  border-radius: 16px;
+
+  color: #111;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer h3 {
+  font-family: 'Modak', cursive;
+}
+
+/* =========================
+   ✅ MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 768px) {
+
+  /* Section padding */
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero {
+    padding: 60px 16px;
+  }
+
+  .rentals,
+  .about {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 36px;
+  }
+
+  .bouncy-title,
+  .about-title {
+    font-size: 28px;
+    animation-duration: 2.4s; /* calmer bounce on mobile */
+  }
+
+  /* Cards */
+  .rental-card {
+    padding: 24px;
+  }
+
+  .rental-card img {
+    border-radius: 16px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 40px 16px 30px;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .hero::before {
+    background-size: 220px;
+    opacity: .8;
+  }
+}
+
+.hero h1,
+.bouncy-title,
+footer h3 {
+  letter-spacing: 1px;
+}
+
+/* Bubble headings only (red fill + black outline) */
+.hero h1,
+.bouncy-title,
+.about-title,
+footer h3 {
+  font-family: 'Modak', cursive;
+  color: #efecec; /* red fill ONLY for these */
+  letter-spacing: 1px;
+
+  -webkit-text-stroke: 2px #000; /* black outline */
+
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   COMING SOON SECTION
+========================= */
+.coming-soon {
+  padding: 70px 20px;
+  background: rgba(237, 117, 117, 0.92);
+  text-align: center;
+}
+
+.coming-title {
+  font-family: 'Modak', cursive;
+  font-size: 34px;
+  color: #f0ebeb;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+
+  -webkit-text-stroke: 2px #000;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+/* Carousel layout */
+.carousel-wrapper {
+  overflow: visible;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Individual items */
+.carousel-item {
+  min-width: calc(33.333% - 16px);
+  background: #eeeff2;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.carousel-item img {
+  width: 50%;
+  height: auto;
+  border-radius: 12px;
+}
+
+
+
+.caption {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #111;
+}
+
+/* Mobile: show 1 item */
+@media (max-width: 768px) {
+  .carousel-item {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-title {
+    font-size: 26px;
+  }
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+
+/* Rental details list */
+.rental-details {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 16px;
+  font-size: 14px;
+  color: #111;
+}
+
+.rental-details li {
+  margin-bottom: 6px;
+}
+
+/* Playful red Book Now button */
+.book-now-btn {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+
+
+  /* ✅ allow scrolling INSIDE modal */
+  overflow-y: auto;
+}
+
+
+/* Modal box */
+.modal-content {
+  background: #fff;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Close button */
+.close-modal {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Modal title */
+.modal-title {
+  font-family: 'Modak', cursive;
+  color: #e63946;
+  -webkit-text-stroke: 2px #000; /* black outline */
+  
+text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal {
+  z-index: 9999 !important;
+}
+
+.modal-content {
+  position: relative;
+  z-index: 10000;
+}
+
+
+/* Form inputs */
+#booking-form input,
+#booking-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Footer Book Now bubble */
+.footer-book-btn {
+  margin-top: 12px;
+  background: #f4eff0;
+  color: #010101;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+/* TRUST CARD IMAGE HOVER / TAP */
+.trust-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Text stays centered */
+.trust-text {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+}
+
+/* Hidden image */
+.trust-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Desktop hover */
+.trust-card:hover .trust-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Dim text slightly when image shows */
+.trust-card:hover .trust-text {
+  opacity: 0.85;
+}
+
+/* Mobile tap support */
+.trust-card:active .trust-image,
+.trust-card:focus-within .trust-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.trust-card:active .trust-text,
+.trust-card:focus-within .trust-text {
+  opacity: 0.85;
+}
+
+/* TRUST CARD POPUP IMAGE */
+.trust-card {
+  position: relative;
+  cursor: pointer;
+}
+
+/* The floating square image */
+.trust-popup {
+  position: absolute;
+  bottom: -140px;              /* controls how far it pops down */
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+
+  background: white;
+  padding: 10px;
+  border-radius: 16px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+/* Desktop hover */
+.trust-card:hover .trust-popup {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* TRUST CARD POPUP IMAGE */
+.trust-popup {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+
+  background: white;
+  padding: 12px;
+  border-radius: 18px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 20;
+}
+
+/* Desktop hover */
+.trust-card:hover .trust-popup {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* Mobile tap */
+.trust-card:active .trust-popup,
+.trust-card:focus-within .trust-popup {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.success-text {
+  color: #ededed;
+  font-family: 'Modak', cursive;
+  letter-spacing: 1px;
+
+  -webkit-text-stroke: 2px #e63946;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.booking-disclaimer,
+.site-disclaimer {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 13px;
+  color: #222;
+  text-align: center;
+}
+
+.site-disclaimer h4 {
+  font-family: 'Modak', cursive;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.checkbox-group {
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+ 
+/* ✅ Prevent mobile input zoom (iOS & Android) */
+#booking-form input,
+#booking-form textarea {
+  font-size: 16px;
+}
+
+/* =========================
+   FULL-PAGE BACKGROUND LOGO
+========================= */
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+}
+
+
+
+@media (max-width: 768px) {
+  body::before {
+    width: 360px;
+    opacity: .8;
+  }
+}
+
+/* =========================
+   BACKGROUND LOGO (FIXED)
+   DOES NOT AFFECT LAYOUT
+========================= */
+
+.background-logo {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 520px;
+
+  background-image: url("images/logo.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+
+  opacity: .7;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================
+   SAFE STACKING (FIX BUTTON CLICKS)
+========================= */
+
+/* Background logo stays at the very bottom */
+.background-logo {
+  z-index: 0;
+}
+
+/* Only structural sections are layered above */
+.hero,
+.trust,
+.rentals,
+.coming-soon,
+.about,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile tweak only */
+@media (max-width: 768px) {
+  .background-logo {
+    width: 360px;
+    opacity: 0.8;
+  }
+}
+
+section,
+header,
+footer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   FIX DOUBLE RED OVERLAYS
+   (KEEP LOGO VISIBLE)
+========================= */
+
+/* Remove extra red layers from sections */
+.hero,
+.trust,
+.about,
+.coming-soon {
+  background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .about p {
+    padding: 16px 18px;
+    font-size: 15px;
+    border-radius: 14px;
+  }
+}
+
+/* =========================
+ FIX
+========================= */
+@media (max-width: 768px) {
+
+  /* Center rental cards */
+  .rental-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center coming soon carousel items */
+  .carousel-item {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+/* ✅ Mobile cross‑platform normalization */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  overscroll-behavior-y: auto;
+}
+
+/* =========================
+   GLOBAL SCROLL RESTORE FIX
+========================= */
+
+/* ✅ Always allow page scrolling by default */
+html, body {
+  height: auto;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+}
+
+/* ✅ ONLY lock scroll when modal is open */
+body.modal-open {
+  overflow: hidden !important;
+}
