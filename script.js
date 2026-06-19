@@ -106,19 +106,30 @@ document.addEventListener("DOMContentLoaded", () => {
         Accept: "application/json"
       }
     })
-    .then(() => {
-      bookingForm.style.display = "none";
-      successMessage.style.display = "block";
-      document.querySelector(".modal-title").style.display = "none";
+   
+ .then((response) => {
+    if (!response.ok) {
+      throw new Error("Form submission failed");
+    }
 
-      // Refresh page after success
-      setTimeout(() => {
-        window.location.reload();
-      }, 3000);
-    })
-    .catch(() => {
-      alert("There was a problem sending your request. Please try again.");
-    });
+    // Fire Google Ads conversion ONLY after successful form submission
+    if (typeof gtag === "function") {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18253585007/XXXXXXXXXXX'
+      });
+    }
+
+    bookingForm.style.display = "none";
+    successMessage.style.display = "block";
+    document.querySelector(".modal-title").style.display = "none";
+
+    // Refresh page after success
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
+  })
+  .catch(() => {
+    alert("There was a problem sending your request. Please try again.");
   });
-
 });
+
