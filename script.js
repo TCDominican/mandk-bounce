@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fire Google Ads conversion ONLY after successful form submission
     if (typeof gtag === "function") {
       gtag('event', 'conversion', {
-        'send_to': 'AW-18253585007/XXXXXXXXXXX'
+        'send_to': 'AW-18253585007/274-670-0584'
       });
     }
 
