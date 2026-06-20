@@ -61,8 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const successMessage = document.getElementById("success-message");
   const selectedItem = document.getElementById("selected-item");
 
-  // Open modal from red buttons
-  document.querySelectorAll(".book-now-btn").forEach(btn => {
+  // Safety check
+  if (!modal || !closeModal || !bookingForm || !successMessage || !selectedItem) {
+    console.error("Booking modal elements not found.");
+    return;
+  }
+
+  // Open modal from rental buttons
+  document.querySelectorAll(".book-now-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       selectedItem.value = btn.dataset.item;
       modal.style.display = "block";
@@ -86,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("modal-open");
   });
 
-  window.addEventListener("click", e => {
+  // Close modal when clicking outside content
+  window.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.style.display = "none";
       document.body.classList.remove("modal-open");
@@ -106,30 +113,35 @@ document.addEventListener("DOMContentLoaded", () => {
         Accept: "application/json"
       }
     })
-   
- .then((response) => {
-    if (!response.ok) {
-      throw new Error("Form submission failed");
-    }
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Form submission failed");
+        }
 
-    // Fire Google Ads conversion ONLY after successful form submission
-    if (typeof gtag === "function") {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18253585007'
+        // Fire Google Ads conversion ONLY after successful form submission
+        // IMPORTANT: replace with your real conversion label when you get it
+        if (typeof gtag === "function") {
+          gtag("event", "conversion", {
+            send_to: "AW-18253585007"
+          });
+        }
+
+        bookingForm.style.display = "none";
+        successMessage.style.display = "block";
+
+        const firstModalTitle = document.querySelector(".modal-title");
+        if (firstModalTitle) {
+          firstModalTitle.style.display = "none";
+        }
+
+        // Refresh page after success
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      })
+      .catch(() => {
+        alert("There was a problem sending your request. Please try again.");
       });
-    }
-
-    bookingForm.style.display = "none";
-    successMessage.style.display = "block";
-    document.querySelector(".modal-title").style.display = "none";
-
-    // Refresh page after success
-    setTimeout(() => {
-      window.location.reload();
-    }, 3000);
-  })
-  .catch(() => {
-    alert("There was a problem sending your request. Please try again.");
   });
-});
 
+});
