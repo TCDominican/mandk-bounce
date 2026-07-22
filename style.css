@@ -5,13 +5,13 @@ html, body {
 
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: rgba(237, 117, 117, 0.92);
-  color: #111; /* default black text */
-  overflow-x: hidden;
-}
+margin: 0;
+font-family: Arial, sans-serif;
+background: #0a0a0a;
+color: #f5f5f5;
+overflow-x: hidden;
 
+}
 
 
 
@@ -43,7 +43,7 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 14px 28px;
-  background: #ff8c00;
+  background: #d4af37;
   color: #fcf7f7;
   border-radius: 999px;
   text-decoration: none;
@@ -61,11 +61,15 @@ body {
 }
 
 .trust-card {
-  background: #f9f7f7;
+  background: #1a1a1a;
+  color: #f5f5f5;
   padding: 20px;
   text-align: center;
-  border-radius: 14px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  border-radius: 20px;
+
+  border: 2px solid #d4af37;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,.4);
 }
 
 /* =========================
@@ -96,7 +100,8 @@ body {
 }
 
 .rental-card {
-  background: rgb(229, 239, 248);
+  background: #1a1a1a;
+color: #f5f5f5;
   padding: 20px;
   border-radius: 20px;
   text-align: center;
@@ -112,16 +117,16 @@ body {
    ABOUT
 ========================= */
 .about {
-  padding: 60px 20px;
-  background: rgba(243, 213, 213, 0.92);
-  text-align: center;
+padding: 60px 20px;
+background: #111;
+text-align: center;
 }
 
 .about-title {
   
   font-family: 'Modak', cursive;
   font-size: 32px;
-  color: #e63946;
+  color: #d4af37;
   animation: bounce 2.2s ease-in-out infinite;
 }
 
@@ -226,7 +231,7 @@ footer h3 {
 .about-title,
 footer h3 {
   font-family: 'Modak', cursive;
-  color: #efecec; /* red fill ONLY for these */
+  color: #d4af37; /* red fill ONLY for these */
   letter-spacing: 1px;
 
   -webkit-text-stroke: 2px #000; /* black outline */
@@ -271,7 +276,8 @@ footer h3 {
 /* Individual items */
 .carousel-item {
   min-width: calc(33.333% - 16px);
-  background: #eeeff2;
+  background: #1a1a1a;
+  color: #f5f5f5;
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.1);
@@ -289,7 +295,7 @@ footer h3 {
   margin-top: 10px;
   font-size: 15px;
   font-weight: bold;
-  color: #111;
+  color: #f5f5f5; 
 }
 
 /* Mobile: show 1 item */
@@ -320,7 +326,30 @@ body.modal-open {
   overflow: hidden;
 }
 
+CSS
+.modal-title {
+color: #d4af37;
+}
+ 
+.checkbox-group label {
+color: #222;
+}
+ 
+.sms-disclaimer {
+  font-size: 11px;
+  text-align: center;
+  color: #000000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  font-weight: bold;
+}
+ 
 
+.submit-btn {
+background: #d4af37;
+color: #000;
+}
 
 /* Rental details list */
 .rental-details {
@@ -328,7 +357,7 @@ body.modal-open {
   padding: 0;
   margin: 12px 0 16px;
   font-size: 14px;
-  color: #111;
+  color: #f5f5f5;
 }
 
 .rental-details li {
@@ -337,7 +366,7 @@ body.modal-open {
 
 /* Playful red Book Now button */
 .book-now-btn {
-  background: #e63946;
+  background: #d4af37;
   color: white;
   border: none;
   padding: 12px 22px;
@@ -395,7 +424,7 @@ body.modal-open {
 /* Modal title */
 .modal-title {
   font-family: 'Modak', cursive;
-  color: #e63946;
+  color: #d4af37;
   -webkit-text-stroke: 2px #000; /* black outline */
   
 text-shadow: 
@@ -428,7 +457,7 @@ text-shadow:
 /* Submit button */
 .submit-btn {
   width: 100%;
-  background: #e63946;
+  background: #d4af37;
   color: white;
   border: none;
   padding: 12px;
@@ -459,134 +488,13 @@ text-shadow:
   box-shadow: 0 10px 26px rgba(0,0,0,0.35);
 }
 
-/* TRUST CARD IMAGE HOVER / TAP */
-.trust-card {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-/* Text stays centered */
-.trust-text {
-  position: relative;
-  z-index: 2;
-  font-size: 16px;
-}
-
-/* Hidden image */
-.trust-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  opacity: 0;
-  transform: scale(1.05);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1;
-}
-
-/* Desktop hover */
-.trust-card:hover .trust-image {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Dim text slightly when image shows */
-.trust-card:hover .trust-text {
-  opacity: 0.85;
-}
-
-/* Mobile tap support */
-.trust-card:active .trust-image,
-.trust-card:focus-within .trust-image {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.trust-card:active .trust-text,
-.trust-card:focus-within .trust-text {
-  opacity: 0.85;
-}
-
-/* TRUST CARD POPUP IMAGE */
-.trust-card {
-  position: relative;
-  cursor: pointer;
-}
-
-/* The floating square image */
-.trust-popup {
-  position: absolute;
-  bottom: -140px;              /* controls how far it pops down */
-  left: 50%;
-  transform: translateX(-50%) scale(0.9);
-
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-
-  background: white;
-  padding: 10px;
-  border-radius: 16px;
-
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
-}
-
-/* Desktop hover */
-.trust-card:hover .trust-popup {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
-/* TRUST CARD POPUP IMAGE */
-.trust-popup {
-  position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translateX(-50%) scale(0.9);
-
-  width: 130px;
-  height: 130px;
-  object-fit: contain;
-
-  background: white;
-  padding: 12px;
-  border-radius: 18px;
-
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 20;
-}
-
-/* Desktop hover */
-.trust-card:hover .trust-popup {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
-/* Mobile tap */
-.trust-card:active .trust-popup,
-.trust-card:focus-within .trust-popup {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
 
 .success-text {
-  color: #ededed;
+  color: #d4af37;
   font-family: 'Modak', cursive;
   letter-spacing: 1px;
 
-  -webkit-text-stroke: 2px #e63946;
+  -webkit-text-stroke: 2px #d4af37;
   text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -615,7 +523,14 @@ text-shadow:
   font-size: 14px;
   cursor: pointer;
 }
- 
+ .checkbox-group {
+color: #333;
+}
+ 
+.checkbox-group label {
+color: #333;
+}
+
 /* ✅ Prevent mobile input zoom (iOS & Android) */
 #booking-form input,
 #booking-form textarea {
@@ -769,4 +684,123 @@ html, body {
 /* ✅ ONLY lock scroll when modal is open */
 body.modal-open {
   overflow: hidden !important;
+}
+
+.photo-booth-image {
+  width: 1000px !important;
+  max-width: 300px !important;
+  height: auto !important;
+}
+
+.photo-booth-card {
+  background: #1a1a1a;
+  color: #f5f5f5;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  background: #d4af37;
+  color: #000;
+
+  border: none;
+  border-radius: 999px;
+
+  padding: 12px 18px;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.3);
+
+  display: none;
+
+  z-index: 9999;
+}
+
+#backToTopBtn:hover {
+  transform: translateY(-2px);
+}
+
+.top-nav{
+  position:fixed;
+  top:10px;
+  right:20px;
+  z-index:9999;
+}
+
+.top-nav a{
+  color:#d4af37;
+  text-decoration:none;
+  font-weight:bold;
+  margin-left:20px;
+}
+
+.top-nav a:hover{
+  text-decoration:underline;
+}
+
+.social-page {
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.social-btn{
+  display:block;
+  max-width:350px;
+
+  margin:20px auto;
+  padding:20px;
+
+  background:#d4af37;
+  color:#000;
+
+  text-decoration:none;
+  font-weight:bold;
+  font-size:20px;
+
+  border-radius:999px;
+}
+
+.background-logo {
+  opacity: .50;
+}
+
+.party-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.party-arrow {
+  background: #d4af37;
+  color: #000;
+
+  border: none;
+  border-radius: 50%;
+
+  width: 50px;
+  height: 50px;
+
+  font-size: 26px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.party-arrow:hover {
+  opacity: .9;
 }
