@@ -804,3 +804,27 @@ body.modal-open {
 .party-arrow:hover {
   opacity: .9;
 }
+
+@media (max-width: 768px) {
+
+  .party-gallery {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #partyImage {
+    max-width: 250px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .photo-booth-card {
+    padding: 15px;
+  }
+
+}
