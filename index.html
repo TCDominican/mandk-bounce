@@ -25,35 +25,40 @@
 <body>
 <div class="background-logo"></div>
  
+<nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="Social-media.html">Social Media</a>
+</nav>
+
 
   <!-- HERO -->
   <section class="hero">
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <a href="#rentals" class="hero-btn">View Our Bouncy Houses</a>
+    <a href="#rentals" class="hero-btn">View Our Rentals</a>
   </section>
 
   <section class="trust">
 
   <div class="trust-card">
-    <span class="trust-text">✅ Clean & Inspected</span>
-    <img src="images/clean.jpeg" alt="Clean & Inspected" class="trust-image">
+    <span class="trust-text">🎈 Bouncy Houses</span>
+    
   </div>
 
   <div class="trust-card">
-    <span class="trust-text">🚚 Reliable Delivery</span>
-    <img src="images/delivery.jpeg" alt="Reliable Delivery" class="trust-image">
+    <span class="trust-text">📸 Photo Booths</span>
+    
   </div>
 
   <div class="trust-card">
-    <span class="trust-text">❤️ Family Owned</span>
-    <img src="images/family.jpeg" alt="Family Owned" class="trust-image">
+    <span class="trust-text">🎊 Party Set Ups</span>
+    
   </div>
 
 </section>
 
   <!-- INVENTORY -->
   <section id="rentals" class="rentals">
-  <h2 class="bouncy-title">Our Bouncy Houses</h2>
+  <h2 class="bouncy-title">Inflatables & Rentals</h2>
 
   <div class="rental-grid">
 
@@ -94,42 +99,117 @@
     </div>
 
   </div>
-</section>
 
-  <section class="coming-soon">
-  <h2 class="coming-title">Coming Soon</h2>
+<!-- PHOTO BOOTHS -->
+<section id="photo-booths" class="rentals">
 
-  <div class="carousel-wrapper">
-    <div class="carousel-track">
+  <h2 class="bouncy-title">Photo Booths</h2>
 
-      <div class="carousel-item">
-        <img src="images/coming1.png" alt="Coming Soon Item 1">
-        <p class="caption">Tables</p>
-      </div>
+  <div class="photo-booth-card">
 
-      <div class="carousel-item">
-        <img src="images/coming2.png" alt="Coming Soon Item 2">
-        <p class="caption">Water Slides</p>
-      </div>
+  <img
+    src="./images/photo-booth.png"
+    alt="Digital Photo Booth"
+    class="photo-booth-image"
+  >
 
-      <div class="carousel-item">
-        <img src="images/coming3.png" alt="Coming Soon Item 3">
-        <p class="caption">Chairs</p>
-      </div>
+  <h3>Digital Only Photo Booth</h3>
 
-      <div class="carousel-item">
-        <img src="images/coming4.png" alt="Coming Soon Item 4">
-        <p class="caption">Photo Booths</p>
-      </div>
+      <ul class="rental-details">
+        <li><strong>Price:</strong> $300</li>
+        <li><strong>Rental Block:</strong> 5 Hours</li>
+        <li><strong>Bundle Option:</strong> Hours match bouncy house rental when booked together</li>
+        <li><strong>Props:</strong> Includes table full of basic photo props</li>
+        <li><strong>Backdrop:</strong> Available for an additional fee</li>
+        <li><strong>Theme Matching:</strong> Party color scheme required for booth customization</li>
+      </ul>
 
-      <div class="carousel-item">
-        <img src="images/coming5.png" alt="Coming Soon Item 5">
-        <p class="caption">Commercial Bouncy's</p>
-      </div>
-
+      <button class="book-now-btn" data-item="Digital Photo Booth">
+        Book Now
+      </button>
     </div>
+
   </div>
 </section>
+
+
+<!-- PARTY SETUP -->
+<section id="party-setup" class="rentals">
+
+  <h2 class="bouncy-title">
+    Balloon Arches & Party Setup
+  </h2>
+
+  <div class="photo-booth-card">
+
+ <div class="party-gallery">
+
+  <button id="partyPrev" class="party-arrow">
+    ❮
+  </button>
+
+  <img
+    id="partyImage"
+    src="./images/partyshow1.png"
+    alt="Balloon Arches and Party Setup"
+    class="photo-booth-image"
+  ><button id="partyNext" class="party-arrow">
+  ❯
+</button>
+
+ 
+
+    <h3>Custom Balloon Arches & Event Design</h3>
+
+    <ul class="rental-details">
+      <li><strong>Pricing:</strong> Custom Quote Required</li>
+      <li><strong>Balloon Arches</strong></li>
+      <li><strong>Backdrops</strong></li>
+      <li><strong>Custom Themes</strong></li>
+      <li><strong>Party Setup Services</strong></li>
+      <li><strong>Consultation Required</strong></li>
+    </ul>
+
+    <button
+      class="book-now-btn"
+      data-item="Balloon Arch / Party Setup Quote"
+    >
+      Request Quote
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- TABLES & CHAIRS -->
+<section id="tables-chairs" class="rentals">
+
+  <h2 class="bouncy-title">Tables & Chairs</h2>
+
+  <div class="photo-booth-card">
+
+    <img
+    tables-chairs.png
+
+    <h3>Tables & Chairs Rentals</h3>
+
+    <ul class="rental-details">
+      <li><strong>Tables:</strong> $10 Each</li>
+      <li><strong>Chairs:</strong> $2 Each</li>
+      <li><strong>Rental Period:</strong> 10am - 7pm</li>
+    </ul>
+
+    <button
+      class="book-now-btn"
+      data-item="Tables and Chairs Rental"
+    >
+      Book Now
+    </button>
+
+  </div>
+
 
   <!-- ABOUT -->
   <section class="about">
@@ -154,6 +234,11 @@
 </button>
 
   </footer>
+
+  <button id="backToTopBtn" title="Back to Top">
+  ↑ Top
+</button>
+
 
   <script src="script.js"></script>
 
@@ -197,9 +282,9 @@
     </label>
   </div>
 
-  <p style="font-size:11px; text-align:center;">
-    Message &amp; data rates may apply. Message frequency varies.
-  </p>
+ <p class="sms-disclaimer">
+Message &amp; data rates may apply.
+</p>
 
   <button type="submit" class="submit-btn">
     Send Request
