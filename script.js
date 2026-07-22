@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(rotateCarousel, 3000);
   }
 
+
   /* =========================
      BOOKING MODAL CODE
   ========================= */
@@ -145,3 +146,70 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+window.addEventListener("scroll", () => {
+
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+
+});
+
+backToTopBtn.addEventListener("click", () => {
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+});
+
+
+/* =========================
+   PARTY SETUP GALLERY
+========================= */
+
+const partyImages = [
+  "./images/partyshow1.png",
+  "./images/partyshow2.png",
+  "./images/partyshow3.png",
+  "./images/partyshow4.png"
+];
+
+let currentPartyImage = 0;
+
+const partyImage = document.getElementById("partyImage");
+const partyPrev = document.getElementById("partyPrev");
+const partyNext = document.getElementById("partyNext");
+
+if (partyImage && partyPrev && partyNext) {
+
+  partyPrev.addEventListener("click", () => {
+
+    currentPartyImage--;
+
+    if (currentPartyImage < 0) {
+      currentPartyImage = partyImages.length - 1;
+    }
+
+    partyImage.src = partyImages[currentPartyImage];
+
+  });
+
+  partyNext.addEventListener("click", () => {
+
+    currentPartyImage++;
+
+    if (currentPartyImage >= partyImages.length) {
+      currentPartyImage = 0;
+    }
+
+    partyImage.src = partyImages[currentPartyImage];
+
+  });
+
+}
